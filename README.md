@@ -8,35 +8,35 @@
 
 ## Data Used 
 
-### madfhantr.csv
-### madhante.csv
+ [madfhantr.csv]
+ [madhante.csv]
 
 
 ## Data Description
 
-### Loan_Status ( Loan approved Yes or No. This is our dependent, or target variable which is based on the independent variables that follow.)
+* Loan_Status ( Loan approved Yes or No. This is our dependent, or target variable. This variable is dependent on all of the other vaiables that follow, called independent variables.)
 
-### Gender ( Male or Female)
+* Gender ( Male or Female)
 
-### Married ( Applicant Married, Yes or No)
+* Married ( Applicant Married, Yes or No)
 
-### Education (Applicant Education, Graduate/ Under Graduate)
+* Education (Applicant Education, Graduate/ Under Graduate)
 
-### Dependents ( Number of Dependents)
+* Dependents ( Number of Dependents)
 
-### ApplicantIncome ( Applicant income)
+* ApplicantIncome ( Applicant income)
 
-### Coapplicantincome ( Co Applicant income)
+* Coapplicantincome ( Co Applicant income)
 
-### LoanAmount ( Loan amount in thousands)
+* LoanAmount ( Loan amount in thousands)
 
-### Credit_History ( Credit history meets guidelines yes or no, represented by values of 1 or 0)
+* Credit_History ( Credit history meets guidelines yes or no, represented by values of 1 or 0)
 
-### Loan_Amount_Term ( Term of loan in months)
+* Loan_Amount_Term ( Term of loan in months)
 
-### Property_Area ( Semiurban, Urban, Other)
+* Property_Area ( Semiurban, Urban, Other)
 
-### Self_Employed ( Self Employed, Yes or No)
+* Self_Employed ( Self Employed, Yes or No)
 
 
 
