@@ -8,13 +8,17 @@
 
 ## Data Used 
 
- [madfhantr.csv]
- [madhante.csv]
+### The data used for this analysis comes from Kaggle.
+https://www.kaggle.com/datasets/madhansing/bank-loan2
+
+### The data is divided into two parts. One part is used for training data, the other is used for testing data.
+*madfhantr.csv ( This is our Training data)
+*madhante.csv ( This is our Testing data
 
 
-## Data Description
+## Feature Descriptions
 
-* Loan_Status ( Loan approved Yes or No. This is our dependent, or target variable. This variable is dependent on all of the other vaiables that follow, called independent variables.)
+* Loan_Status ( Loan approved Yes or No. This is our dependent, or target feature. This feature is dependent on all of the other feature that follow, called independent features.)
 
 * Gender ( Male or Female)
 
@@ -37,6 +41,19 @@
 * Property_Area ( Semiurban, Urban, Other)
 
 * Self_Employed ( Self Employed, Yes or No)
+
+
+## Exploratory Data Analysis
+
+### We proceed to import the data into a dataframe and view its contents in order to have a basic idea of the features we are working with. 
+*madfhantr.csv ( This is our Training data)
+*madhante.csv ( This is our Testing data
+
+### We combine the applicant and coapplicant income features into one feature, as these are closely related.
+
+### As we look at the data we notice that there are some missing values in a few of the columns that we will later decide whether to drop or to replace.
+
+### We notice that there is a class imbalance between the loans that have been approved and the loans that have not. We need to be wary of that fact as we proceeed as our model may end up being bias towards approving the loan as it is most common. This also makes us aware of the metrics that we want to use as accuracy may not be the best indicator as a dummy classifier that could predict the majority class should have a 68% level of accuracy. We instead will use precision as a metric which will insure the bank is not burdened with unwanted risk when providing loans to applicants.
 
 
 
