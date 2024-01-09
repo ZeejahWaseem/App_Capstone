@@ -57,10 +57,34 @@ https://www.kaggle.com/datasets/madhansing/bank-loan2
 
 ### We notice that there is a class imbalance between the loans that have been approved and the loans that have not. We need to be wary of that fact as we proceeed as our model may end up being bias towards approving the loan as it is most common. This also makes us aware of the metrics that we want to use as accuracy may not be the best indicator as a dummy classifier that could predict the majority class should have a 68% level of accuracy. We instead will use precision as a metric which will insure the bank is not burdened with unwanted risk when providing loans to applicants.
 
+*Image
+
+### Using and plotting a correlation matrix using seaborn we can view the relationship between some features to get a better understanding of our data.
+
+*Image
 
 
+## Data Cleaning
 
+### Our first cleaning step is to check for missing values.
 
+### We notice that there are some null values and for the categorial variables we choose to replace them with the mode or the most common value. We are going to create a function to turn replace the null values with the mode.
+
+### Looping through the categorical columns using the function we built and replacing the null values with the mode.
+
+### After replacing all of the categorical variables, we will now deal with the numerical variables.
+
+### Normally for Numerical variables we would be inclined to take the mean, however we can see that the loan amount terms are specific amounts and taking the average would not make much sense. We also know that there are outliers for the loan amount therefore we can use the same function to replace the values with the mode for the numerical variables.
+
+### Next we transform the categoricals variables into numbers and encode them in order for our algorithm to properly interpret them.
+
+### We use the label encoder function to transform the categorical variables that are binary.
+
+### Then we loop through the categories and encode them.
+
+### We next use the get dummies function to encode the singular column that is not binary. Normally we would use OHE but its a singular column thats is a series therefore the get dummies function works better.
+
+### We confirm all data types are correct.
 
 
 
