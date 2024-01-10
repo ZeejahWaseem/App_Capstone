@@ -10,6 +10,7 @@ This classification analysis will allow Dream Housing Finance Company to automat
 ## Data Used 
 
 The dataset used for this analysis comes from Kaggle.
+
 https://www.kaggle.com/datasets/madhansing/bank-loan2
 
 The data is divided into two parts. One part is used for training data, the other is used for testing data.
@@ -49,6 +50,7 @@ madhante.csv ( This is our Testing data)
 ## Exploratory Data Analysis
 
 We proceed to import the data into a dataframe and view its contents in order to have a basic idea of the features we are working with. 
+
 madfhantr.csv ( This is our Training data)
 madhante.csv ( This is our Testing data)
 
