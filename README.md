@@ -14,7 +14,9 @@ The dataset used for this analysis comes from Kaggle.
 https://www.kaggle.com/datasets/madhansing/bank-loan2
 
 The data is divided into two parts. One part is used for training data, the other is used for testing data.
+
 madfhantr.csv ( This is our Training data)
+
 madhante.csv ( This is our Testing data)
 
 
@@ -34,7 +36,7 @@ madhante.csv ( This is our Testing data)
 
 7. ApplicantIncome ( Applicant income)
 
-8. Coapplicantincome ( Co Applicant income)
+8. Coapplicantincome ( Co-Applicant income)
 
 9. LoanAmount ( Loan amount in thousands)
 
@@ -52,13 +54,14 @@ madhante.csv ( This is our Testing data)
 We proceed to import the data into a dataframe and view its contents in order to have a basic idea of the features we are working with. 
 
 madfhantr.csv ( This is our Training data)
+
 madhante.csv ( This is our Testing data)
 
 We combine the applicant and coapplicant income features into one feature, as these are closely related.
 
 As we look at the data we notice that there are some missing values in a few of the columns that we will later decide whether to drop or to replace.
  
-We notice that there is a class imbalance between the loans that have been approved and the loans that have not. We need to be wary of that fact as we proceeed as our model may end up being bias towards approving the loan as it is most common. This also makes us aware of the metrics that we want to use as accuracy may not be the best indicator as a dummy classifier that could predict the majority class should have a 68% level of accuracy. We instead will use precision as a metric which will insure the bank is not burdened with unwanted risk when providing loans to applicants.
+Continuing forward with the data we notice that there is a class imbalance between the loans that have been approved and the loans that have not. We need to be wary of that fact as we proceed because our model may end up being bias towards approving the loan since it is most common. This also makes us aware of the metrics that we want to use, accuracy might not be the best indicator as a dummy classifier that could predict the majority class should have a 68% level of accuracy. We instead will use precision as a metric which will insure the bank is not burdened with unwanted risk when providing loans to applicants. The precison metric will lower the incidents of false positives, that is to say loan applicantions being sent for futher review when they should be automatically denied.
 
 *Image
 
@@ -109,6 +112,92 @@ Modeling preparation begins by splitting the data into a train test split. Then 
 We then proceed to scale the model after splitting it in order to prevent data from leaking into the test set.
 
 We will first start off with a dummy classifier with the most frequent class being the strategy to evaluate the model.
+
+We optain a accurracy of about 65% but we know that is not the best metric to use as blindly predicting will lead us to at least a 65% accuracy we also need to make sure that the model doesn't favor the majority class therefore we will be using precision as our main metric while viewing and trying to improve other metrics as well such as recall.
+
+Retrieving the precision score yields a score of roughly 65% as well.
+
+We then print a classification report to confirm all metrics.
+
+Next we can start the actual modeling by trying different classifying algorithms, starting with the decision tree model.
+
+The decision tree classifier yields an improvement of about 11% in the precision score, from roughly 65% to 76%.
+
+We try to improve the model further by using grid search.
+
+While we don't see an improvement in the precision score after using grid search we do see an improvement in other metrics such as the f1 score. With the improvment of the f1 score we will consider grid search successful in giving us a better model.
+
+We create a confusion matrix to better visualize the data.
+
+*Image
+
+Our next modeling attempt to improve the classification will be the random forest classifier model.
+
+We got a slightly better precision score from random forest model (roughly 77%). 
+
+Grid search is next used to tune some parameters with the hope of further improving our precision score.
+
+Grid search did not improve our precision but it did improve recall. We stick with the original random forest classifier model without grid search as precision is still our target metric, not recall.
+
+We create another confusion matrix to visualize our current metrics.
+
+*Image
+
+The next modeling technique we use is the XGBoost Classifier model.
+
+XGBoost slightly improves our precison score.
+
+XGBoost with grid search further improves the precison score to it's highest level of 79%, and improves the f1 score to it's highest level of 77%.
+
+Again we create a confusion matrix to visualize these metrics.
+
+*Image
+
+We then check the XGboost model for overfitting and notice that there is a lot of overfitting in our model. This overfitting can be seen by obserrving that our training precision is much higher than our testing precision.
+
+Next we'll look at the features that the model believes were important when making a decision.
+
+*Image(Feature importance)
+
+The feature importances shows us that credit history, the property areas, and loan amount term are the most important features to our model.
+
+Once we found the most important features we can take a deeper look at them through visualizations that will allow us to make recommendations to the company.
+
+*Image(Credit History)
+
+We can see that those with a good credit history where approved for the loan while those with a bad credit history where more ofthen rejected than approved.
+
+*Image(Property_Area)
+
+We notice that Semi Urban areas have the most likely hood of having an application approved, while those in rural areas are most likely to be rejected.
+
+*Image(Loan_Amount_Term)
+
+Lastly we notice that the standard loan amount term which is 360 months has the highest likely hood of being approved.
+
+
+## Conclusion
+
+By using our most effective classification model (XGBoost) Dream Housing Finance Company will be able to automate their loan eligibility process in the most efficient way possible. Considerable time spent by underwritters will be saved, and precision will be increased. This increase in precison will lower the incidents of false positives in the loan process. False positives in this case being loan applicants being sent to further review for a loan when they should automatcally be denied. Credit risk for Dream Housing Finance Company will be greatly mitigated by using the XGBoost ML model to identify and measure the factors that most directly correlate to a borrower defaulting on their credit obligations.
+
+
+## Constraints
+
+The XGboost model appears to be overfitting. This overfitting can be seen by observing that our training precision is much higher than our testing precision. This overfitting is an issue that will be addressed by further tuning for future iterations of model use.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
