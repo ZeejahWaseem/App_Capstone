@@ -51,7 +51,7 @@ madhante.csv ( This is our Testing data)
 
 ## Exploratory Data Analysis
 
-We proceed to import the data into a dataframe and view its contents in order to have a basic idea of the features we are working with. 
+We begin our analysis by importing the data into a dataframe and view its contents in order to have a basic idea of the features we are working with. 
 
 madfhantr.csv ( This is our Training data)
 
