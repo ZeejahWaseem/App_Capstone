@@ -62,7 +62,7 @@ As we look at the data we notice that there are some missing values in a few of 
 Continuing forward with the data we notice that there is a class imbalance between the loans that have been approved and the loans that have not. We need to be wary of that fact as we proceed because our model may end up being bias towards approving the loan since it is most common. This also makes us aware of the metrics that we want to use, accuracy might not be the best indicator as a dummy classifier that could predict the majority class should have a 68% level of accuracy. We instead will use precision as a metric which will insure the bank is not burdened with unwanted risk when providing loans to applicants. The precison metric will lower the incidents of false positives, that is to say loan applicantions being sent for futher review when they should be automatically denied.
  
  
-![alt text](Images/ApprovalStatus_CreditHistory.PNG)
+![alt text](Images/LoansApproved.PNG)
  
 Using and plotting a correlation matrix using seaborn we can view the relationship between some features to get a better understanding of our data.
  
